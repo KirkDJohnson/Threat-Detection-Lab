@@ -45,11 +45,13 @@ Now I know the suspected malicoius IP addresses, I conducted further threat inte
 <br />
 <br />
 With what I had uncovered in the logs and threat intelligence I moved to the packet capture to try and see when the attack happened and other possible indicators of attack or compromise. Looking at statistics -> conversations and sorting by the number of packets, the IP from the logs with the python-requests and CVE staging was the top talker. Taking a bit of a detour and looking at Virus Total for any community information about this IP showed that ut was clean but related to a malicious trojan. <br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/46a5b0bc-9c62-4ec1-aa53-3a4bb7df2659" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/7051e8ac-b26e-4f7a-8bb7-bd80d5c053f1" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+Filtering for the suspecetd malicious IP, first showed a considerable amount of TCP SYN requests targeting known ports in which the server responded with RST, ACK, potnetionally indicating a port scan. However, knowing attakc was agaisnt a web server, I added http to the filter and discovered a lot of POST requst traffic to the server. <br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/7d003096-04e6-4723-8d3e-f148c41e6c92" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/d01d58c9-d666-4a4c-8ee4-fb289d9f0fae" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
 Text<br/>

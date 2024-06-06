@@ -1,4 +1,4 @@
-<h1>Threat Detection Lab</h1>
+<h1>Threat Detection Lab IN PROGRESS</h1>
 
 
 
@@ -44,7 +44,7 @@ Now I know the suspected malicoius IP addresses, I conducted further threat inte
 <img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/3f869dda-105e-4bcd-8806-72a7c7a5f466" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
+With what I had uncovered in the logs and threat intelligence I moved to the packet capture to try and see when the attack happened and other possible indicators of attack or compromise. Looking at statistics -> conversations and sorting by the number of packets, the IP from the logs with the python-requests and CVE staging was the top talker. Taking a bit of a detour and looking at Virus Total for any community information about this IP showed that ut was clean but related to a malicious trojan. <br/>
 <img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />

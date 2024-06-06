@@ -54,11 +54,12 @@ Filtering for the suspecetd malicious IP, first showed a considerable amount of 
 <img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/d01d58c9-d666-4a4c-8ee4-fb289d9f0fae" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+Follwing the first HTTP streams shows the a user logging into "/bontia/loginservice" with a username of a complex email and password. Examining more HTTP streams shows similar results, the user/attacker is using different credntials against the login service. However, rather than being a brute force attack of trying the most common passwords and usernames, this attacks appears to be crential dumping where already compromised centials are then used in a seperate attack as here.<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/7ed48469-5bb5-4ab8-9bc6-28d987ecae12" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/5cea7fc6-7faf-4d52-b0da-50958eef36f2" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
+On the 118th <br/>
 <img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />

@@ -78,23 +78,26 @@ Noticing this IP address had HTTP GET requests I filtered for it and discovered 
 <img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/ad2e95a1-c6a1-4e0c-b0c2-05f84200b550" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Using the cat command with /etc/passwd with show all the user accounts of the webserver, so I pivoted my focus to the wget command of the pastes.io website to see what was downloaded <br/>
+Using the cat command with /etc/passwd with show all the user accounts of the webserver, so I pivoted my focus to the wget command of the pastes.io website to see what was downloaded. Using the website Browserling, allows users to see render the webpage in a sandboxxed enviornment. <br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/b264f477-b4f1-4996-8aab-54cd4e81cb9b" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/3260b5e1-036f-45ff-8ede-626d2d4de664" height="100%" width="100%" alt="Threat Detection Lab"/>
 <img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
+Within Wireshark, after the script was run, it is clear the attacker established an ssh session where their activity was ecnrypted. <br/>
 <img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+Lastly, within Wireshark, after the ssh session, the attacker downloads and uses nmap, a network scanner, and then ran an TCP SYN scan likely to identify other networks and ports to pivot to, to continue the attack.<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/49471a23-9d91-4e5a-b110-3f8c27a047e4" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/409aa18e-8a9f-470e-9b50-94773963069e" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-Text<br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+Once the investigation was complete, I search the MITRE ATT&CK framework and found that the attacker used Technqiue 1098.004, manipulation of SSH auithorized keys.<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/8895a1a2-30c0-4453-9cb3-4c2f955d8fb4" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
 
 <h2>Thoughts</h2>
-Text
+This CTF/walkthrough was similar to many I have done in the past; however, it introduced me to a very useful tool, jq, which I will use in the future for dealing with large JSON files. Moreover, the given scenario and questions provided just enough information to complete the CTF without hand-holding, allowing me to use Wireshark and conduct the threat intelligence myself on the CVE. I then switched to Wireshark to uncover how the CVE was used by multiple IP addresses as part of the attack chain. The initial access was a credential stuffing brute force attack, followed by the exploitation of CVE-2022-25237. The attacker then modified the SSH authorized keys for persistence and used cat /etc/passwd as part of their objective. The CTF gave me a great view of how an attacker moved through the kill chain and used several different avenues in their attacks. The more labs and CTFs like these I do, the more confident I become with Wireshark.
 

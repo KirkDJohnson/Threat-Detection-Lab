@@ -59,8 +59,10 @@ Follwing the first HTTP streams shows the a user logging into "/bontia/loginserv
 <img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/5cea7fc6-7faf-4d52-b0da-50958eef36f2" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
-On the 118th <br/>
-<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
+On the 118th login attempt, the attack successfully login into the webserver with the credentials of "seb.broom" signified by the HTTP 204 response. Next in the HTTP stream, a POST request to the bontia/API/pageUpload, the attacker appended to the URL ";il18ntranslation" which as seen earlier confirms the attacker leverageing CVE-2022-25237. <br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/8ea484b7-9adc-4a91-b37c-b1dc82a7186c" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="(https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/52556617-65fa-4c9c-8afa-92a421d9cce7" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="(https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/d7bbde97-63dd-4b38-9b3d-3e489f2b7e55" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
 Text<br/>

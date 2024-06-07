@@ -62,7 +62,24 @@ Follwing the first HTTP streams shows the a user logging into "/bontia/loginserv
 On the 118th login attempt, the attack successfully login into the webserver with the credentials of "seb.broom" signified by the HTTP 204 response. Next in the HTTP stream, a POST request to the bontia/API/pageUpload, the attacker appended to the URL ";il18ntranslation" which as seen earlier confirms the attacker leverageing CVE-2022-25237. <br/>
 <img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/8ea484b7-9adc-4a91-b37c-b1dc82a7186c" height="100%" width="100%" alt="Threat Detection Lab"/>
 <img src="(https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/52556617-65fa-4c9c-8afa-92a421d9cce7" height="100%" width="100%" alt="Threat Detection Lab"/>
-<img src="(https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/d7bbde97-63dd-4b38-9b3d-3e489f2b7e55" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/d7bbde97-63dd-4b38-9b3d-3e489f2b7e55" height="100%" width="100%" alt="Threat Detection Lab"/>
+<br />
+<br />Within the log file and Wireshark, the IP address 138[.]199[.]59[.]221 was seen using "python-request" into the webserver the same user agent by the other malicious IP and in Wireshark had similar amount of traffic ot the webserver so I filered for that IP with HTTP to analyze the traffic. Examing the first few packets and it is immedaitely clear that this is a malicious user, likely the same threat actor as the previous IP as there were POST requesets to the /bonita/loginservice followed by "i18ntranslation" appended to the URL.<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/c5116953-9bce-40d7-9243-16c8bcfebf15" height="100%" width="100%" alt="Threat Detection Lab"/>
+<br />
+<br />
+With it now clear that this IP was also involved in the attack, I begun following the HTTP streams and discovered that it found the this IP used the saem correct cernditals first to gain access to the webserver after that used the exploit<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/7df163c6-6103-4b2c-93f7-a39183ee063b" height="100%" width="100%" alt="Threat Detection Lab"/>
+<br />
+<br />
+Noticing this IP address had HTTP GET requests I filtered for it and discovered three GET requests, one to cat the /etc/passwd file, a wget command to the website pastes.io a file sharing website, and a bash command to run this donwloaded file. When following both HTTP streams it was apparent that both GET requests were successful given the HTTP 200 response meaning OK.<br/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/5dcfb06b-40d0-4239-a93c-54149aa151fb" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/65a14d63-fb16-42b4-90a8-8de0add5e859" height="100%" width="100%" alt="Threat Detection Lab"/>
+<img src="https://github.com/KirkDJohnson/Threat-Detection-Lab/assets/164972007/ad2e95a1-c6a1-4e0c-b0c2-05f84200b550" height="100%" width="100%" alt="Threat Detection Lab"/>
+<br />
+<br />
+Using the cat command with /etc/passwd with show all the user accounts of the webserver, so I pivoted my focus to the wget command of the pastes.io website to see what was downloaded <br/>
+<img src="" height="100%" width="100%" alt="Threat Detection Lab"/>
 <br />
 <br />
 Text<br/>

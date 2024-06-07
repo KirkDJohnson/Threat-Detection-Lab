@@ -3,7 +3,7 @@
 
 
 <h2>Description</h2> 
-Text
+In the CTF/walkthrough the scernio a company using a business management platform wanted to determine if they had been compromised. I taking the role of a security analyst was given a log and packet capture file. I begun my investigation with log file and when discovering it was a large json formatted file, I used the tool jq more easily view the log file. I identiftied the seignature filed within the alert catergory and filtered for alerts by IP addresses sorted and counted by the number of occrance and discovered a large volume of webtraffic from a user agent "python-requests" and possible straging of CVE-2022-25237. I then conducted threat intellgience on the CVE which was 
 
 <br />
 

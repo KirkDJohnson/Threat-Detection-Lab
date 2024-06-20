@@ -1,4 +1,4 @@
-<h1>Threat Intelligence and Detection Lab</h1>
+<h1>Threat Detection Lab</h1>
 
 
 
